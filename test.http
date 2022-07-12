@@ -1,0 +1,73 @@
+### Create Product
+POST http://localhost:8080/api/products
+Content-Type: application/json
+Accept: application/json
+X-Api-Key: SECRET
+
+{
+  "id" : "A006",
+  "name": "Macbook Pro",
+  "price": 30000000,
+  "quantity": 1
+}
+
+### Create Product Invalid
+POST http://localhost:8080/api/products
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id" : "",
+  "name": "",
+  "price": 0,
+  "quantity": -1
+}
+
+### Get Product
+GET http://localhost:8080/api/products/A001
+Accept: application/json
+
+
+### Get Product Not Found
+GET http://localhost:8080/api/products/SALAH
+Accept: application/json
+
+### Update Product
+PUT http://localhost:8080/api/products/A001
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Macbook Pro M1",
+  "price": 40000000,
+  "quantity": 12
+}
+
+### Update Product with Invalid Body
+PUT http://localhost:8080/api/products/A001
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "",
+  "price": 40000000,
+  "quantity": 12
+}
+
+### Delete Product
+DELETE http://localhost:8080/api/products/A001
+Content-Type: application/json
+
+### List Products
+GET http://localhost:8080/api/products
+Accept: application/json
+
+### List Products with Parameter Size
+GET http://localhost:8080/api/products?size=2
+Accept: application/json
+X-Api-Key: SECRET
+
+
+### List Products with Parameter Size and Page
+GET http://localhost:8080/api/products?size=2&page=1
+Accept: application/json
